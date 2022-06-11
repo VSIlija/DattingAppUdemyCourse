@@ -1,0 +1,279 @@
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <label class="title"><strong><h1> {{member.fullName}}, {{member.age}} </h1></strong></label>
+                <div class="mb-2">
+                    <img src="{{member.photoUrl || './assets/user.png'}}" style="width: 400px; height: 300px;border-radius: 50%;">
+                </div>
+                <div>
+                    Email <input type="email" class="form-control" [(ngModel)]="member.email">
+                </div>
+                <p class="mt-3"><strong>Work</strong></p>
+                <p> {{member.job}}, {{member.company}} </p>
+
+                <p><strong>Education</strong></p>
+                <input type="email" class="form-control" [(ngModel)]="member.school">
+            
+                <div class="mb-3">
+                    <label class="form-label"><strong> Why you're here? </strong></label>
+                    <div class="form-check">
+                        <div class="mb-3">
+                            <i class="fa fa-users" style="font-size: 1.5em;"></i>
+                            <input type="radio" style="margin-right: 10px; margin-left: 15px;" name="whyYouAreHere" class="fomr-check-input" value="ToDate" [(ngModel)]="member.whyYouAreHere">
+                            <label for="form-check-label" > Here to date </label>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fa fa-comment" style="font-size: 1.5em;"></i>
+                            <input  type="radio" name="whyYouAreHere" style="margin-right: 10px; margin-left: 15px;"  class="fomr-check-input" value="ToChat" [(ngModel)]="member.whyYouAreHere">
+                            <label for="form-check-label" > Open to chat </label>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fa fa-heart" style="font-size: 1.5em;"></i>
+                            <input type="radio" name="whyYouAreHere" style="margin-right: 10px; margin-left: 15px;"  class="fomr-check-input" value="Relationship" [(ngModel)]="member.whyYouAreHere">
+                            <label for="form-check-label"> Ready for relationship </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-3">
+        <div class="card">
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <i class="fa fa-user" style="font-size: 1.5em;"></i>
+                </div>
+                <p class="col-6 d-flex justify-content-start align-items-center">Height</p>
+                <div class="col-3 m-2">
+                    <input class="form-control" type="number" [(ngModel)]="member.height">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Children</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.children">
+                          <mat-option>Children</mat-option>
+                          <mat-option value="Someday">I'd like them some day</mat-option>
+                          <mat-option value="Soon">I'd like them soon</mat-option>
+                          <mat-option value="DontWant">I don't want kids</mat-option>
+                          <mat-option value="AlreadyHave">I already have kids</mat-option>
+                          <mat-option value="NotSay">I'd reather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Drinking</p> 
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.drinking">
+                          <mat-option>Drinking</mat-option>
+                          <mat-option value="Socially">Socially</mat-option>
+                          <mat-option value="Never">Never</mat-option>
+                          <mat-option value="Often">Often</mat-option>
+                          <mat-option value="Sober">No,I'm sober</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Relationship</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.relationship">
+                          <mat-option *ngIf="">Relationship</mat-option>
+                          <mat-option value="Single">Single</mat-option>
+                          <mat-option value="Taken">Taken</mat-option>
+                          <mat-option value="Complicated">It's complicated</mat-option>
+                          <mat-option value="Other">Other</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Sexualtity</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.sexuality">
+                          <mat-option *ngIf="">Sexualtity</mat-option>
+                          <mat-option value="Straight">Straight</mat-option>
+                          <mat-option value="Gay">Gay</mat-option>
+                          <mat-option value="Lesbian">Lesbian</mat-option>
+                          <mat-option value="Bisexual">Bisexual</mat-option>
+                          <mat-option value="Asexual">Asexual</mat-option>
+                          <mat-option value="Demisexual">Demisexual</mat-option>
+                          <mat-option value="Pansexual">Pansexual</mat-option>
+                          <mat-option value="Queer">Queer</mat-option>
+                          <mat-option value="Questioning">Questioning</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Smoking</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.smoking">
+                          <mat-option *ngIf="">Smoking</mat-option>
+                          <mat-option value="Yes">Yes</mat-option>
+                          <mat-option value="No">No</mat-option>
+                          <mat-option value="Sometimes">Sometimes</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">StarSign</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.starSign">
+                          <mat-option *ngIf="">StarSign</mat-option>
+                          <mat-option value="Leo">Leo</mat-option>
+                          <mat-option value="Virgo">Virgo</mat-option>
+                          <mat-option value="Libra">Libra</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Religion</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.religion">
+                          <mat-option *ngIf="">Religion</mat-option>
+                          <mat-option value="Yes">Agnostic</mat-option>
+                          <mat-option value="No">Hindu</mat-option>
+                          <mat-option value="Sometimes">Atheist</mat-option>
+                          <mat-option value="Other">Other</mat-option>
+                          <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Personality</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.personality">
+                            <mat-option *ngIf="">Personality</mat-option>
+                            <mat-option value="Introvert">Introvert</mat-option>
+                            <mat-option value="Extrovert">Extrovert</mat-option>
+                            <mat-option value="Between">Between</mat-option>
+                            <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col m-2">
+                    <div class="col-4"><i class="fa fa-user" style="font-size: 1.5em;"></i></div>
+                </div>
+                <p class="col-3 d-flex justify-content-start align-items-center">Education Level</p>
+                <div class="col-6 m-2">
+                    <mat-form-field>
+                        <mat-select [(value)]="member.education">
+                            <mat-option value="SixhtForm">Sixth Form</mat-option>
+                            <mat-option value="PosgraduateDegree">Posgraduate degree</mat-option>
+                            <mat-option value="PostgraduateStudent">Postgraduate student</mat-option>
+                            <mat-option value="UndergradStudent">Undergard student</mat-option>
+                            <mat-option value="UndergraduateDegree">Undergraduate degree</mat-option>
+                            <mat-option value="NotSay">I'd rather not say</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+    <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label"> Looking for </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" value="male" [(ngModel)]="member.lookingFor">
+                            <label class="form-check-label" for="flexCheckDefault"> Male </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" value="female" [(ngModel)]="member.lookingFor">
+                            <label class="form-check-label" for="flexCheckDefault"> Female </label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" value="other" [(ngModel)]="member.lookingFor">
+                            <label class="form-check-label" for="flexCheckDefault"> Other </label>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Gender </label>
+                        <div class="form-check">
+                            <input type="radio" name="flexRadioDefault" class="fomr-check-input" value="male" [(ngModel)]="member.gender">
+                            <label for="form-check-label" style="margin-left: 10px"> Male </label>
+                        </div>
+                        <div class="form-check">
+                            <input  type="radio" name="flexRadioDefault" class="fomr-check-input" value="female" [(ngModel)]="member.gender">
+                            <label for="form-check-label" style="margin-left: 10px"> Female </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="flexRadioDefault" class="fomr-check-input" value="other" [(ngModel)]="member.gender">
+                            <label for="form-check-label" style="margin-left: 10px"> Other </label>
+                        </div>
+                    </div>  
+                    <div class="mb-3">
+                        <label class="form-label"> Introduction </label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="member.introduction"></textarea>   
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Interests </label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="member.interests"></textarea>   
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Country </label> 
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedCountry">
+                            <option *ngFor="let countryName of countriesNames" [ngValue]="countryName">{{countryName}}</option>
+                        </select> 
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> City </label> 
+                        <input type="email" class="form-control" [(ngModel)]="member.city">   
+                    </div> 
+                </div>
+            </div>
+    </div>
+    <button class="btn btn-primary" (click)="updateUser()"> Save </button>
+</div>
+
+
+
+
